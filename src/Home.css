@@ -1,0 +1,221 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 6%;
+  background: #ffffffd0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #095624;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #00ad54;
+}
+
+.nav-btn {
+  background: #00ad54;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #008f46;
+}
+
+/* ✅ Fullscreen Hero Section */
+.fullscreen-hero {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ✅ Dark Overlay for better text visibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ Centered Content */
+.hero-content {
+  text-align: center;
+  color: white;
+  max-width: 650px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-title span {
+  color: #00ff88;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active-link {
+  font-weight: bold;
+  color: #00ad54;
+}
+
+.nav-links a.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #00ad54;
+  border-radius: 2px;
+}
+
+.button {
+  --clr: #00ad54;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  color: #121212;
+  border: none;
+  cursor: pointer;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button-decor {
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr);
+  transform: translateX(-65%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover .button-decor {
+  transform: translateX(0);
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.button__icon {
+  width: 48px;
+  height: 40px;
+  background-color: var(--clr);
+  display: grid;
+  place-items: center;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.button__text {
+  padding: 2px 1.5rem 2px;
+  padding-left: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  transition: color 0.3s ease-in-out;
+}
+
+.button:hover .button__text {
+  color: #fff;
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ✅ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
