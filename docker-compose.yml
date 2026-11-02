@@ -1,0 +1,58 @@
+# Databases for AgriBot. Start with:  docker compose up -d
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: agribot-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-agribot}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agribot_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-agribot}
+    ports:
+      - "5433:5432"   # host 5433: a local Windows PostgreSQL already uses 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-agribot}"]
+      interval: 10s
+      retries: 5
+
+  mongodb:
+    image: mongo:7
+    container_name: agribot-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-agribot}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-agribot_pass}
+    ports:
+      - "27018:27017"  # host 27018: a local Windows MongoDB already uses 27017
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      retries: 5
+
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: agribot-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: ${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-agribot_pass}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_server_memory_heap_max__size: 1G
+    ports:
+      - "7474:7474"   # browser UI
+      - "7687:7687"   # bolt
+    volumes:
+      - neo4j_data:/data
+      - ./backend/graph/import:/import
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 || exit 1"]
+      interval: 15s
+      retries: 10
+
+volumes:
+  postgres_data:
+  mongo_data:
+  neo4j_data:

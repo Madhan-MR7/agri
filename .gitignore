@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+tmp_images/
+tmp_audio/
+tmp_tts/
+static/audio/
+
+# Model artifacts (large / regenerated)
+*.h5
+backend/ml/artifacts/*.joblib
+
+# Mobile (Expo) - see also mobile/.gitignore
+mobile/.expo/
+
+# Node
+node_modules/
+dist/
+
+# Docker volumes
+docker-data/

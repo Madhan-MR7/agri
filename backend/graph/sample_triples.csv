@@ -1,0 +1,27 @@
+head,head_type,relation,tail,tail_type,source
+Wheat,Crop,SUSCEPTIBLE_TO,Wheat Yellow Rust,Disease,sample
+Wheat,Crop,SUSCEPTIBLE_TO,Wheat Brown Rust,Disease,sample
+Wheat Yellow Rust,Disease,CAUSED_BY,Puccinia striiformis,Pathogen,sample
+Wheat Yellow Rust,Disease,HAS_SYMPTOM,Yellow stripes of pustules on leaves,Symptom,sample
+Wheat Yellow Rust,Disease,FAVOURED_BY,Cool humid weather 10-15 C,Climate,sample
+Wheat Yellow Rust,Disease,TREATED_BY,Propiconazole 25 EC,Pesticide,sample
+Wheat Yellow Rust,Disease,PREVENTED_BY,Resistant varieties,Practice,sample
+Wheat Brown Rust,Disease,CAUSED_BY,Puccinia triticina,Pathogen,sample
+Wheat Brown Rust,Disease,TREATED_BY,Tebuconazole 25 EC,Pesticide,sample
+Wheat,Crop,GROWS_IN,Alluvial,SoilType,sample
+Wheat,Crop,SUITABLE_FOR_SEASON,Rabi,Season,sample
+Rice,Crop,SUSCEPTIBLE_TO,Rice Blast,Disease,sample
+Rice,Crop,SUSCEPTIBLE_TO,Rice Bacterial Blight,Disease,sample
+Rice Blast,Disease,CAUSED_BY,Magnaporthe oryzae,Pathogen,sample
+Rice Blast,Disease,HAS_SYMPTOM,Diamond-shaped lesions with grey centres,Symptom,sample
+Rice Blast,Disease,FAVOURED_BY,Excess nitrogen,Nutrient,sample
+Rice Blast,Disease,TREATED_BY,Tricyclazole 75 WP,Pesticide,sample
+Rice Bacterial Blight,Disease,CAUSED_BY,Xanthomonas oryzae,Pathogen,sample
+Rice Bacterial Blight,Disease,TREATED_BY,Streptocycline with copper oxychloride,Pesticide,sample
+Rice,Crop,GROWS_IN,Clayey,SoilType,sample
+Rice,Crop,SUITABLE_FOR_SEASON,Kharif,Season,sample
+Sugarcane,Crop,SUSCEPTIBLE_TO,Sugarcane Red Rot,Disease,sample
+Sugarcane Red Rot,Disease,CAUSED_BY,Colletotrichum falcatum,Pathogen,sample
+Sugarcane Red Rot,Disease,PREVENTED_BY,Hot water treatment of setts,Practice,sample
+Sugarcane Red Rot,Disease,TREATED_BY,Carbendazim sett dip,Pesticide,sample
+Sugarcane,Crop,GROWS_IN,Black,SoilType,sample
